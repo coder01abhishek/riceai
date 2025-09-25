@@ -76,8 +76,8 @@ export default function HeroSection() {
                   ) : (
                     <>
                       <Image
-                        src={logo.src}
-                        alt={logo.alt}
+                        src={logo.src as string}
+                        alt={logo.alt as string}
                         height={32} // h-8 = 32px
                         width={100} // matches max-w-[100px]
                         className="w-auto max-w-[100px] object-contain"
