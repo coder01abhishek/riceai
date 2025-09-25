@@ -64,7 +64,7 @@ export default function DePINProtocol() {
             <div className=" border border-white/20 rounded-2xl p-4">
               <p className="text-2xl">🧠</p>
               <p className="text-gray-300 mt-4">
-                Powered by multimodal AI for language, vision, and navigation, it's a smart assistant that learns, adapts, and evolves to your needs.
+                Powered by multimodal AI for language, vision, and navigation, it&apos;s a smart assistant that learns, adapts, and evolves to your needs.
               </p>
             </div>
           </div>

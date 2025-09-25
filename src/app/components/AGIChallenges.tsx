@@ -44,7 +44,7 @@ export default function AgiChallenges() {
       <div>
         <div className="mb-16">
           <h2 className="text-2xl lg:text-6xl font-medium text-white mb-6">
-            What's stopping AGI for<br /> robotics from advancing?
+            What&apos;s stopping AGI for<br /> robotics from advancing?
           </h2>
         </div>
 

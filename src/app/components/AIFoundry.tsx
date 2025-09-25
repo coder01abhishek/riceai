@@ -1,5 +1,6 @@
 // components/AIFoundry.tsx
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AIFoundry() {
   return (
@@ -44,9 +45,11 @@ export default function AIFoundry() {
 
       {/* Robot Image */}
       <div className="absolute lg:top-0 right-0 bottom-0">
-        <img
+        <Image
           src="/images/ai-foundry-robot.png"
           alt="AI Foundry Robot"
+          width={800}
+          height={600}
           className="w-full h-full object-cover z-10"
         />
       </div>
