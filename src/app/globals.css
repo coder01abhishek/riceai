@@ -1,26 +1,134 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000;
+  --foreground: #ffffffb8;
+  --font-sans: var(--font-inter); /* Add your Inter font here */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter); /* Reference the Inter font */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffffb8;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans); 
+  antialiased: true;
+}
+
+/* hero section */
+/* Add to your globals.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.hero-subtitle-box-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Pause animation on hover */
+.scrolling-logos:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Zen Dots font class */
+.zen-dots {
+  font-family: 'Zen Dots', cursive;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 15s;
+  }
+  
+  .logo-item {
+    padding: 0 0.75rem;
+  }
+}
+.scrolling-logos {
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* company section */
+/* Smooth transitions for the slider */
+.slide-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 700ms ease-in-out;
+}
+
+.slide-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 700ms ease-in-out;
+}
+
+/* Custom scrollbar for mobile */
+@media (max-width: 1024px) {
+  .mobile-slider {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .mobile-slide {
+    scroll-snap-align: start;
+  }
+}
+
+/* Hover effects */
+.robot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient borders */
+.gradient-border {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
