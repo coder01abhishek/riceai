@@ -14,10 +14,15 @@ export default function Home() {
       <DePINProtocol />
       <MinibotSection/>
       <AGIChallenges/>
+      <HeroSection />
       <AIFoundry/>
       <RobotBrain/>
+      <HeroSection />
       <KeyFeatures/>
       <RiceRoboticsSection/>
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
     </>
   );
 }
