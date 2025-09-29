@@ -116,6 +116,7 @@ const RiceRoboticsSection = () => {
                                             alt={model.title}
                                             width={400}
                                             height={300}
+                                            loading='lazy'
                                             className="mt-auto object-cover rounded-3xl opacity-50 max-w-full"
                                             priority={index === 0}
                                         />
@@ -232,6 +233,7 @@ const RiceRoboticsSection = () => {
                                         alt={model.title}
                                         width={56}
                                         height={56}
+                                        loading='lazy'
                                         className="opacity-50 max-w-full max-h-full object-contain"
                                     />
                                 </div>
@@ -261,6 +263,7 @@ const RiceRoboticsSection = () => {
                                             alt={model.title}
                                             width={500}
                                             height={400}
+                                            loading='lazy'
                                             className="mt-auto object-cover rounded-3xl opacity-50 max-w-full"
                                             priority={index === 0}
                                         />
