@@ -118,7 +118,7 @@ const RiceRoboticsSection = () => {
                                             height={300}
                                             loading='lazy'
                                             className="mt-auto object-cover rounded-3xl opacity-50 max-w-full"
-                                            priority={index === 0}
+                                            
                                         />
                                     </div>
                                     <div className="absolute bottom-0 left-0 right-0 px-6 lg:p-8 rounded-b-3xl mb-6 lg:mb-0">
@@ -227,7 +227,7 @@ const RiceRoboticsSection = () => {
                                 className={` border border-gray-700/30 rounded-2xl p-4 flex flex-col h-full cursor-pointer transition-all duration-300 '
                                     }`}
                             >
-                                <div className="bg-gray-300 w-14 h-14 flex items-center justify-center rounded-lg">
+                                <div className="bg-[#262626] w-14 h-14 flex items-center justify-center rounded-lg">
                                     <Image
                                         src={model.image}
                                         alt={model.title}
@@ -265,7 +265,6 @@ const RiceRoboticsSection = () => {
                                             height={400}
                                             loading='lazy'
                                             className="mt-auto object-cover rounded-3xl opacity-50 max-w-full"
-                                            priority={index === 0}
                                         />
                                     </div>
                                     <div className="absolute bottom-0 left-0 right-0 px-6 lg:p-8 rounded-b-3xl mb-6 lg:mb-0">

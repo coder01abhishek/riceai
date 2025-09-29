@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Spline from "@splinetool/react-spline";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,8 +30,12 @@ export default function HeroSection() {
 
   return (
     <section className="relative rounded-2xl h-[90vh] bg-black text-white flex flex-col justify-center items-center overflow-hidden">
+      <Spline
+      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black scale-[400%] sm:scale-200 md:scale-125 lg:scale-100 min-w-full min-h-full object-contain"
+        scene="https://prod.spline.design/varS-Qb3gQc84Bwa/scene.splinecode" 
+      />
       {/* Background Video */}
-      <video
+      {/* <video
         ref={videoRef}
         id="hero-video-bg"
         src="/videos/hero-video-bg.mp4"
@@ -39,7 +44,8 @@ export default function HeroSection() {
         autoPlay
         muted
         loop
-      />
+        preload="auto"
+      /> */}
 
       {/* Content */}
       <div className="relative z-10 px-6 max-w-6xl w-full">
@@ -78,9 +84,10 @@ export default function HeroSection() {
                       <Image
                         src={logo.src as string}
                         alt={logo.alt as string}
-                        height={32} // h-8 = 32px
-                        width={100} // matches max-w-[100px]
+                        height={32}
+                        width={100}
                         className="w-auto max-w-[100px] object-contain"
+                        fetchPriority="high"
                       />
                       {logo.text && (
                         <span className="text-gray-400 ml-2 text-sm">{logo.text}</span>
