@@ -1,36 +1,36 @@
 // src/components/Header.tsx
 "use client";
-
+ 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { FaXTwitter, FaDiscord, FaTelegram } from "react-icons/fa6";
 import Image from "next/image";
-
+ 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isTelegramOpenMobile, setIsTelegramOpenMobile] = useState(false);
-
+ 
   useEffect(() => {
     setMounted(true);
   }, []);
-
+ 
   const navLinks = [
     { name: "Protocol dePIN", href: "/protocol" },
     { name: "Features", href: "/features" },
     { name: "Company", href: "/company" },
     { name: "Whitepaper", href: "/whitepaper" },
   ];
-
+ 
   useEffect(() => {
     if (!mounted) return;
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
-
+ 
   if (!mounted) {
     return (
       <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
@@ -42,15 +42,9 @@ export default function Header() {
       </header>
     );
   }
-
+ 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/40 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
       <div className="max-w-[1300px] mx-auto flex justify-between items-center sm:px-6 px-4 pt-4 h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -58,9 +52,11 @@ export default function Header() {
             <Image src="/images/rice-icon.svg" alt="Logo" width={20} height={20} />
           </div>
         </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8 text-[13px] text-white">
+        <nav
+          className={`hidden md:flex items-center space-x-8 text-[13px] text-white px-4 py-3 rounded-lg transition-all duration-300 ${
+            scrolled ? "bg-[black/40] backdrop-blur-md border border-white/10  rounded-lg" : " border border-transparent"
+          }`}
+        >
           {navLinks.map((link, index) => (
             <Link
               key={link.name}
@@ -72,7 +68,7 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-
+ 
           {/* Socials */}
           <div className="hidden md:flex items-center gap-4 text-white">
             <Link href="https://twitter.com" target="_blank" aria-label="Twitter">
@@ -81,7 +77,7 @@ export default function Header() {
             <Link href="https://discord.com" target="_blank" aria-label="Discord">
               <FaDiscord className="w-6 h-6 hover:text-gray-300 text-[#5865F2]" />
             </Link>
-
+ 
             {/* Telegram Dropdown */}
             <div className="relative group">
               <button className="flex items-center gap-2 hover:opacity-70 transition-opacity">
@@ -108,7 +104,7 @@ export default function Header() {
             </div>
           </div>
         </nav>
-
+ 
         {/* Buy Rice */}
         <Link
           href="/buy"
@@ -130,8 +126,9 @@ export default function Header() {
             />
           </svg>
         </Link>
-
+ 
         {/* Mobile menu toggle button */}
+ 
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white"
@@ -140,7 +137,7 @@ export default function Header() {
           <Menu size={28} />
         </button>
       </div>
-
+ 
       {/* Mobile Nav - Slide in */}
       <div
         className={`fixed top-0 left-0 h-[1200vh] w-[100vw] bg-black/90 backdrop-blur-md border-r border-white/10 transform transition-transform duration-500 ease-in-out z-40 ${
@@ -157,7 +154,7 @@ export default function Header() {
             <X size={28} />
           </button>
         </div>
-
+ 
         <ul className="flex flex-col space-y-4 px-6 py-6 text-white text-lg">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -170,7 +167,7 @@ export default function Header() {
               </Link>
             </li>
           ))}
-
+ 
           {/* Socials with Telegram dropdown for mobile */}
           <li className="flex flex-col gap-2 pt-4 border-t border-white/20">
             <div className="flex gap-4">
@@ -194,7 +191,7 @@ export default function Header() {
                 />
               </button>
             </div>
-
+ 
             {isTelegramOpenMobile && (
               <div className="ml-1 mt-2 flex flex-col gap-2 text-sm">
                 <a
@@ -214,7 +211,7 @@ export default function Header() {
               </div>
             )}
           </li>
-
+ 
           <li>
             <Link
               href="/buy"
@@ -242,3 +239,4 @@ export default function Header() {
     </header>
   );
 }
+ 
